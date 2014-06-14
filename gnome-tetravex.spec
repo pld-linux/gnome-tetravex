@@ -1,11 +1,11 @@
 Summary:	GNOME Tetravex
 Name:		gnome-tetravex
-Version:	3.12.2
+Version:	3.12.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	d30b9c901f8492055780475244ae7ffb
+# Source0-md5:	f8b193bcbca27c9194fc19e4531494f9
 URL:		https://wiki.gnome.org/Apps/Tetravex
 BuildRequires:	appdata-tools
 BuildRequires:	autoconf >= 2.63
