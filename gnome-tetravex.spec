@@ -1,8 +1,9 @@
-Summary:	GNOME Tetravex
+Summary:	GNOME Tetravex game
+Summary(pl.UTF-8):	Gra GNOME Tetravex
 Name:		gnome-tetravex
 Version:	3.12.3
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.12/%{name}-%{version}.tar.xz
 # Source0-md5:	f8b193bcbca27c9194fc19e4531494f9
@@ -27,8 +28,12 @@ Obsoletes:	gnome-games-gnotravex < 1:3.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Tetravex is a simple puzzle where pieces must be positioned so that
-the same numbers are touching each other.
+GNOME Tetravex is a simple puzzle where pieces must be positioned so
+that the same numbers are touching each other.
+
+%description -l pl.UTF-8
+GNOME Tetravex to prosta układanka, w której kawałki muszą być ułożone
+tak, aby te same liczby się stykały.
 
 %prep
 %setup -q
@@ -70,10 +75,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gnome-tetravex
 %{_datadir}/appdata/gnome-tetravex.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.tetravex.gschema.xml
-#%{_datadir}/gnome-tetravex
 %{_desktopdir}/gnome-tetravex.desktop
-%{_iconsdir}/HighContrast/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.svg
+%{_iconsdir}/HighContrast/*/apps/gnome-tetravex.png
+%{_iconsdir}/hicolor/*/apps/gnome-tetravex.png
+%{_iconsdir}/hicolor/scalable/apps/gnome-tetravex.svg
 %{_mandir}/man6/gnome-tetravex.6*
-
