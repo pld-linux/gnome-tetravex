@@ -1,12 +1,12 @@
 Summary:	GNOME Tetravex game
 Summary(pl.UTF-8):	Gra GNOME Tetravex
 Name:		gnome-tetravex
-Version:	3.16.0
+Version:	3.18.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	bbb796e3d2576e11d6c1a127ac6959db
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	1ac936a705f3792107b7bc15ff56070f
 URL:		https://wiki.gnome.org/Apps/Tetravex
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -61,12 +61,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %glib_compile_schemas
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 
 %postun
 %glib_compile_schemas
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 
 %files -f %{name}.lang
@@ -76,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/appdata/gnome-tetravex.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.tetravex.gschema.xml
 %{_desktopdir}/gnome-tetravex.desktop
-%{_iconsdir}/HighContrast/*x*/apps/gnome-tetravex.png
 %{_iconsdir}/hicolor/*x*/apps/gnome-tetravex.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-tetravex.svg
+%{_iconsdir}/hicolor/scalable/apps/gnome-tetravex-symbolic.svg
 %{_mandir}/man6/gnome-tetravex.6*
