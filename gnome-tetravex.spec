@@ -1,18 +1,17 @@
 Summary:	GNOME Tetravex game
 Summary(pl.UTF-8):	Gra GNOME Tetravex
 Name:		gnome-tetravex
-Version:	3.18.0
+Version:	3.22.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	1ac936a705f3792107b7bc15ff56070f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	063f3f05d700c258bf2aebb2f6df1ad8
 URL:		https://wiki.gnome.org/Apps/Tetravex
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.40.0
-BuildRequires:	gnome-common
 BuildRequires:	gtk+3-devel >= 3.13.4
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	pkgconfig
