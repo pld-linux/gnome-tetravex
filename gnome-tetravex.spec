@@ -1,26 +1,29 @@
 Summary:	GNOME Tetravex game
 Summary(pl.UTF-8):	Gra GNOME Tetravex
 Name:		gnome-tetravex
-Version:	3.22.0
+Version:	3.34.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	063f3f05d700c258bf2aebb2f6df1ad8
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	d80ea0ff368aedd03f5e49c7fbf2684a
 URL:		https://wiki.gnome.org/Apps/Tetravex
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	appstream-glib
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.40.0
-BuildRequires:	gtk+3-devel >= 3.13.4
-BuildRequires:	intltool >= 0.50.0
+BuildRequires:	gtk+3-devel >= 3.14
+BuildRequires:	meson >= 0.37.1
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24
+BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.40.0
 Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3 >= 3.13.4
+Requires:	gtk+3 >= 3.14
 Requires:	hicolor-icon-theme
 Provides:	gnome-games-gnotravex = 1:%{version}-%{release}
 Obsoletes:	gnome-games-gnotravex < 1:3.8.0
@@ -38,20 +41,14 @@ tak, aby te same liczby się stykały.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
+%meson build
 
-%{__make}
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -70,10 +67,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/gnome-tetravex
-%{_datadir}/appdata/gnome-tetravex.appdata.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.tetravex.gschema.xml
-%{_desktopdir}/gnome-tetravex.desktop
-%{_iconsdir}/hicolor/*x*/apps/gnome-tetravex.png
-%{_iconsdir}/hicolor/scalable/apps/gnome-tetravex.svg
-%{_iconsdir}/hicolor/scalable/apps/gnome-tetravex-symbolic.svg
+%{_datadir}/glib-2.0/schemas/org.gnome.Tetravex.gschema.xml
+%{_datadir}/metainfo/org.gnome.Tetravex.appdata.xml
+%{_desktopdir}/org.gnome.Tetravex.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.Tetravex.png
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Tetravex.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Tetravex-symbolic.svg
 %{_mandir}/man6/gnome-tetravex.6*
