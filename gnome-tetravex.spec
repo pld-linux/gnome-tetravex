@@ -1,12 +1,12 @@
 Summary:	GNOME Tetravex game
 Summary(pl.UTF-8):	Gra GNOME Tetravex
 Name:		gnome-tetravex
-Version:	3.36.0
+Version:	3.36.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tetravex/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	80455bb093846476f4b49fb70da8c3fa
+# Source0-md5:	a3c2f57ff981959c25e19690d0b35d26
 URL:		https://wiki.gnome.org/Apps/Tetravex
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools
